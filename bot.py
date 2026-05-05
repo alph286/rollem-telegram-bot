@@ -198,7 +198,8 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     #job = context.job
     #context.bot.send_message(chat_id=update.message.chat_id, text=response, parse_mode='HTML', disable_web_page_preview=True)
     
-TOKEN = sys.argv[1]
+import os
+TOKEN = os.environ.get("TOKEN")
 
 formatter = logging.Formatter('====> %(asctime)s | %(name)s | %(levelname)s | %(message)s')
 stream_handler = logging.StreamHandler(sys.stdout)
